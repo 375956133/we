@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <script>
+    // var divs=document.getElementsByTagName("div");
+
+    // var spans=document.getElementsByTagName("span");
+    // console.log(divs);
+    // for(var i=0;i<divs.length;i++){
+    // 	divs[i].innerHTML=i;
+    // 	divs[i].style.width="100px";
+    // 	divs[i].style.height="100px";
+    // 	divs[i].style.backgroundColor="lightgreen";
+    // 	divs[i].style.marginTop="10px";
+    // }
+    //  // for(var i=0;i<spans.length;i++){
+    // 	spans[i].innerHTML=i;
+    // 	spans[i].style.width="100px";
+    // 	spans[i].style.height="100px";
+    // 	spans[i].style.backgroundColor="purple";
+    // 	spans[i].style.marginTop="10px";
+    // 	spans[i].style.display="block";
+    // }
+    function changeColor(tag,callback){
+    	var tags=document.getElementsByTagName(tag);
+    	for(var i=0;i<tags.length;i++){
+    	// tags[i].innerHTML=i;
+    	// tags[i].style.width="100px";
+    	// tags[i].style.height="100px";
+    	// tags[i].style.backgroundColor="lightgreen";
+    	// tags[i].style.marginTop="10px";
+    		callback(tags[i],i);
+   		 }
+    }
+	 
+   
+     changeColor("div",function(element){
+     	element.style.width="100px";
+     	element.style.height="100px";
+     	element.style.backgroundColor="red";
+     	element.style.marginTop="10px";
+
+     })
+     changeColor("span",function(element,index){
+     	element.style.width="100px";
+     	element.style.height="100px";
+     	element.style.marginTop="10px";
+     	element.style.backgroundColor="purple";
+     	element.style.display="block";
+     	element.innerHTML=index;
+     	element.style.color="#fff";
+
+
+     })
+   
+    </script>
+    </body>
+</html>

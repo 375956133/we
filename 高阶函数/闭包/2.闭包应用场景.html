@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    	var arr=[]
+    	for(var i=0;i<3;i++){
+    		arr[i]=(function(n){
+    			return function(){
+    				console.log(n)
+    			}
+
+    		})(i)
+    	}
+    	arr[0]()
+    	arr[1]()
+    	arr[2]()
+    	</script>
+    </body>
+</html>

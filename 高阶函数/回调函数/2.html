@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    	function foo(o){
+    		console.log(o.name);
+    		console.log(o.age);
+    		// console.log(o.dance());
+    		o.dance("小苹果")
+    		// console.log(o.dance("小苹果"))
+
+    	}
+
+    	var obj={
+    		name:"yuexianqin",
+    		age:30,
+    		dance:function(a){
+    			// console.log("dancing")
+    			console.log("dancing"+a)
+    		}
+    	}
+    	
+    	foo(obj)
+    	</script>
+    </body>
+</html>

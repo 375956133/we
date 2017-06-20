@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>	
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    	<script>
+    	onload=function(){
+    		var inputs=document.getElementsByTagName("input")
+    		console.log(inputs)
+    		for(var i=0;i<inputs.length;i++){
+    			inputs[i].onclick=(function(){
+    				var num=0;
+    				return function(){
+    					this.value=++num;
+    				}
+    			})()
+    		}
+    	}
+    	</script>
+    </body>
+</html>

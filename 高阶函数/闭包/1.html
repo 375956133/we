@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <script>
+  // 函数的嵌套形成闭包，可以延长变量的生命周期
+
+  function Admin() {
+    var money = 10000;
+    var every = 1000;
+
+    function opration() {
+      money -= every;
+      return every;
+
+    }
+    return opration;
+  }
+  var opration = Admin()
+  var money = opration()
+  console.log(money)
+  </script>
+</body>
+
+</html>
