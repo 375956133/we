@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/angular.js"></script>
+  <script src="js/angular-route.js"></script>
+</head>
+
+<body ng-app="App">
+  <div ng-controller="Ctrl">
+    <h1>{{name}}</h1>
+  </div>
+  <a href="#!/register/王才/123456789">注册页面</a>
+  <a href="#!/login?name=岳献琴&password=123456">登录页面</a>
+  <a href="#!/404">404</a>
+  <div ng-view></div>
+  <div>
+  	<img src="../../images/bird.png">
+  	<img src="../../images/tianshi.gif">
+  </div>
+  
+  <script>
+  // "angular路由原理就是瞄点的跳转,锚链接就是我们前端的路由,angular路由是一个独立的模块需要单独引入,
+  //   路由是需要配置的$routeProvider有两个方法, when和otherwise, 最后要把页面渲染到指定的位置用ng - view ";
+  var App = angular.module("App", ["ngRoute"]);
+  App.controller("Ctrl", ["$scope", function($scope) {
+    $scope.name = "单页面应用";
+
+  }]);
+  App.controller("registerCtrl", ["$scope", "$routeParams",function($scope,$routeParams) {
+    $scope.text1= "我是注册页面的内容";
+    console.log($routeParams);
+    $scope.username=$routeParams.username;
+    $scope.password=$routeParams.password;
+
+  }]);
+  App.controller("loginCtrl", ["$scope", "$routeParams",function($scope,$routeParams) {
+    $scope.text2 = "我是登录页面的内容";
+    console.log($routeParams);
+    console.log($routeParams.name);
+    console.log($routeParams.password);
+    $scope.name=$routeParams.name;
+    $scope.password=$routeParams.password;
+
+  }]);
+
+  App.config(["$routeProvider", function($routeProvider) {
+  	// 路由传递参数
+    $routeProvider.when("/register/:username/:password", {
+      templateUrl: "views/register.html",
+      controller: "registerCtrl"
+    }).when("/login", {
+      templateUrl: "views/login.html",
+      controller: "loginCtrl"
+    }).when("/404", {
+      templateUrl: "views/404.html"
+    }).otherwise({
+      redirectTo: "/404"
+    })
+
+  }]);
+  
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+/*
+* @Author: Administrator
+* @Date:   2017-06-18 21:04:29
+* @Last Modified by:   Administrator
+* @Last Modified time: 2017-06-18 21:14:34
+*/
+body{
+	/* background-color: yellowgreen; */
+	background-image: url(../../../images/3.jpg);
+}
+*{
+	margin:0;
+	padding: 0;
+}
+image{
+	vertical-align: middle;
+}
+a{
+
+	text-decoration: none;
+}
+input{
+	outline-style: none;
+}
